@@ -1,3 +1,6 @@
+// CREDITS: got help from Aiperi, Sam Lawson, and Raymond Ortega
+// particularly in routes.js ($inc ... etc) but also in main.js logic
+
 module.exports = function(app, passport, db) {
 
 // normal routes ===============================================================
@@ -9,11 +12,12 @@ module.exports = function(app, passport, db) {
 
     // PROFILE SECTION =========================
     app.get('/profile', isLoggedIn, function(req, res) {
-        db.collection('messages').find().toArray((err, result) => {
+        db.collection('cassinoStats').find().toArray((err, result) => {
           if (err) return console.log(err)
+          console.log(result)
           res.render('profile.ejs', {
-            user : req.user,
-            messages: result
+            balance: result[0].balance,
+            ledger: result[0].ledger
           })
         })
     });
@@ -34,20 +38,38 @@ module.exports = function(app, passport, db) {
       })
     })
 
-    app.put('/messages', (req, res) => {
-      db.collection('messages')
-      .findOneAndUpdate({name: req.body.name, msg: req.body.msg}, {
-        $set: {
-          thumbUp:req.body.thumbUp + 1
-        }
+    app.put('/cassinoStats', (req, res) => {
+      db.collection('cassinoStats')
+      .findOneAndUpdate({name: "CassinoStats"}, {
+        $inc: {
+          balance: parseFloat(req.body.betResult)
+        },
+        $push:{
+          ledger: {betResult: parseFloat(req.body.betResult),didWin: (req.body.didWin == 'true')}
+          }
       }, {
         sort: {_id: -1},
         upsert: true
       }, (err, result) => {
         if (err) return res.send(err)
-        res.send(result)
+         res.send(result)
       })
     })
+
+    // app.put('/messagesDown', (req, res) => {
+    //   db.collection('messages')
+    //     .findOneAndUpdate({name: req.body.name, msg: req.body.msg}, {
+    //       $set: {
+    //         thumbUp:req.body.thumbUp - 1
+    //       }
+    //     }, {
+    //       sort: {_id: -1},
+    //       upsert: true
+    //     }, (err, result) => {
+    //       if (err) return res.send(err)
+    //       res.send(result)
+    //     })
+    //   })
 
     app.delete('/messages', (req, res) => {
       db.collection('messages').findOneAndDelete({name: req.body.name, msg: req.body.msg}, (err, result) => {

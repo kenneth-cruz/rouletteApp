@@ -1,24 +1,133 @@
 <!doctype html>
 <html>
 <head>
-    <title>21 Savage Fan Site</title>
+    <title>Roulette Game</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
 <div class="container">
 
     <div class="jumbotron text-center">
-        <h1>21 Savage Fan Site</h1>
-        <img src="img/savage21.jpg" alt="21 Savage Profile Photo">
+        <h1>Kenken's Casino Roulette</h1>
+        <img src="img/roulette.gif" alt="Roulette Game GIF">
 
-        <p>Login or Signup:</p>
+        <p>[Casino Employee] Login or Signup:</p>
 
         <a href="/login" class="btn btn-default"><span class="fa fa-user"></span>Login</a>
         <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span>Signup</a>
 
     </div>
+
+    <!-- Roulette logic  -->
+    <section id="inputSection">
+
+    <section>
+    <table>
+      <tr>
+        <td id="green"> 0 </td>
+        <td id="red"> 1</td>
+        <td  id="black""> 2</td>
+        <td id="red">3 </td>
+        <td id="black"> 4</td>
+        <td id="red"> 5</td>
+        <td id="black"> 6</td>
+        <td id="red"> 7</td>
+        <td id="black"> 8</td>
+        <td id="red"> 9</td>
+        <td id="black"> 10</td>
+        <td id="red"> 11</td>
+        <td id="black"> 12</td>
+        <td id="red"> 13</td>
+        <td id="black"> 14</td>
+        <td id="red"> 15</td>
+        <td id="black"> 16</td>
+        <td id="red"> 35  </td>
+      </tr>
+      <tr>
+        <td id="green" > 00</td>
+        <td id="black"> 18</td>
+        <td id="red"> 19</td>
+        <td id="black"> 20</td>
+        <td id="red"> 21  </td>
+        <td id="black"> 22  </td>
+        <td id="red"> 23  </td>
+        <td id="black"> 24  </td>
+        <td id="red"> 25  </td>
+        <td id="black"> 26  </td>
+        <td id="red"> 27  </td>
+        <td id="black"> 28  </td>
+        <td id="red"> 29  </td>
+        <td id="black"> 30  </td>
+        <td id="red"> 31  </td>
+        <td id="black"> 32  </td>
+        <td id="red"> 33  </td>
+        <td id="black"> 34  </td>
+        <td id="red"> 36  </td>
+
+      </tr>
+    </table>
+    </section>
+
+
+    <p>Result of the Round:</p> <p id="resultColor"></p>
+    <p>Current Player Balance:</p> <p id="balance">100000</p>
+    <input type="text" name="" value="" id="playerBet">
+    <button id="submitBet" type="submit">Submit</button>
+
+    <select class="" name=""id="dropdown">
+      <option value="Red">Red</option>
+      <!-- <option value="Green">Green</option> -->
+      <option value="Black">Black</option>
+      <option value="Green">00</option>
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+      <option value="13">13</option>
+      <option value="14">14</option>
+      <option value="15">15</option>
+      <option value="16">16</option>
+      <option value="17">17</option>
+      <option value="18">18</option>
+      <option value="19">19</option>
+      <option value="20">20</option>
+      <option value="21">21</option>
+      <option value="22">22</option>
+      <option value="23">23</option>
+      <option value="24">24</option>
+      <option value="25">25</option>
+      <option value="26">26</option>
+      <option value="27">27</option>
+      <option value="28">28</option>
+      <option value="29">29</option>
+      <option value="30">30</option>
+      <option value="31">31</option>
+      <option value="32">32</option>
+      <option value="33">33</option>
+      <option value="34">34</option>
+      <option value="35">35</option>
+      <option value="36">36</option>
+    </select>
+    <!-- <button type="button" name="button" id="red" > Red </button>
+    <button type="button" name="button" id="black">Black </button> -->
+    <!-- <button type="button" name="button" id="min" value="5">Min</button>
+    <button type="button" name="button" id="max" value="50"> Max</button> -->
+
+    <!-- End of Roulette logic -->
+
+</section>
+    <script src="main.js"></script>
 
 </div>
 </body>

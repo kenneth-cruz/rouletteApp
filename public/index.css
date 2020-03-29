@@ -1,0 +1,30 @@
+body{
+  padding-top:80px;
+  word-wrap:break-word;
+  background-color: beige;
+  background-image: url(img/sunset.jpeg);
+  background-size: cover;
+}
+img{
+  height: 200px;
+}
+
+#inputSection{
+  text-align: center;
+  font-size: 40px;
+}
+
+td{
+  border: 1px solid black;
+  width: 40%;
+}
+#green{
+  background-color: green;
+}
+#red{
+  background-color: red;
+}
+#black{
+  background-color: black;
+  color: white;
+}

@@ -1,0 +1,28 @@
+body{
+  padding-top:80px;
+  word-wrap:break-word;
+  background-color: skyblue;
+  background-image: url(img/money.gif);
+  background-repeat: repeat-x;
+  background-size: cover
+}
+img{
+  height: 200px;
+}
+
+h1{
+  font-size: 50px
+}
+.money{
+  color: black;
+  font-weight: bold;
+}
+.col-sm-6, .listContainer{
+  display: flex;
+    justify-content: center;
+    width: 100%;
+}
+#key{
+  color: black;
+  background-color: green;
+}
